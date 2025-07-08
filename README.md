@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# 📝 Job Application Form – Next.js + MongoDB
 
-First, run the development server:
+This is a **job application web form** built using **Next.js (App Router)**, allowing users to submit their:
+
+- ✅ Full Name
+- ✅ Email Address
+- ✅ Resume File (PDF/DOC)
+
+The submitted data is:
+
+- ✅ Stored in a **MongoDB** database using Mongoose  
+- ❌ _Currently not sending emails to the recruiter_ (email functionality can be added later using Nodemailer)
+
+> 🔧 Bootstrapped with `create-next-app` using App Router (Next.js 13+)
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Installation
+
+1. **Clone the repository**:
+
+```bash
+git clone https://github.com/your-username/job-application-form-nextjs.git
+cd job-application-form-nextjs
+````
+
+2. **Install dependencies**:
+
+```bash
+npm install
+```
+
+3. **Create a `.env` file**:
+
+Create a `.env` file in the root of the project and add the following:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+```
+
+> 💡 Replace `your_mongodb_connection_string` with your actual MongoDB Atlas URI.
+
+4. **Run the development server**:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+job-application-form/
+├── app/
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.js      # API route to handle form submission
+│   └── page.js               # Frontend page containing the form
+├── components/
+│   └── Form.js               # Form component (if used)
+├── public/                   # Static assets
+├── .env                      # Environment variables (not pushed to GitHub)
+├── .gitignore                # Ignores node_modules, .env, etc.
+├── package.json              # Project metadata and dependencies
+├── README.md                 # Project documentation
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧰 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Layer       | Technology                |
+| ----------- | ------------------------- |
+| Frontend    | Next.js (App Router)      |
+| Backend     | Next.js API Routes        |
+| Database    | MongoDB Atlas + Mongoose  |
+| File Upload | FormData (multipart)      |
+| Styling     | CSS |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✅ Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* 📝 Clean and simple job application form
+* 📁 Resume file upload support
+* 🗃 Stores application data in MongoDB
+* ❌ Currently no email notifications (can be added later)
+* 📦 Deploy-ready for Vercel, Render, or Railway
+
+---
+
+## 📌 Environment Variables
+
+The application requires the following environment variable:
+
+| Key           | Required | Description                               |
+| ------------- | -------- | ----------------------------------------- |
+| `MONGODB_URI` | ✅        | MongoDB Atlas URI for database connection |
+
+---
+
+## 📦 Future Enhancements
+
+* [ ] Send resume via email to recruiter using Nodemailer
+* [ ] Admin dashboard to view applicants
+* [ ] Cloud file storage (AWS S3 or Cloudinary)
+* [ ] CAPTCHA/spam protection
+
+---
